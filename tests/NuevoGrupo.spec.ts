@@ -13,9 +13,9 @@ test('NuevoGrupo', async ({ page }) => {
   await page.getByRole('link', { name: ' Grupos de Trabajo' }).click();
   await page.getByRole('button', { name: ' Crear Grupo' }).click();
   await page.getByRole('textbox', { name: 'Nombre:' }).click();
-  await page.getByRole('textbox', { name: 'Nombre:' }).fill('Grupo Prueba 1');
+  await page.getByRole('textbox', { name: 'Nombre:' }).fill('Grupo Prueba doce');
   await page.getByRole('combobox', { name: 'Seleccionar Fecha' }).click();
-  await page.getByText('18').click();
+  await page.getByText('20', { exact: true }).click();
   await page.getByText('Seleccione integrantes').click();
   await page.getByRole('checkbox', { name: 'Rodrigo Emilio' }).check();
   await page.getByRole('checkbox', { name: 'Cliente1' }).check();
