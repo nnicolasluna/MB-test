@@ -45,7 +45,7 @@ test('Nuevo_usuario', async ({ page }) => {
   await page.locator('div').filter({ hasText: 'Informacion Enviando correo...' }).nth(2).click();
   await page.locator('div').filter({ hasText: 'Correcto Correo enviado' }).nth(2).click();
   await page.locator('a').filter({ hasText: 'Log Out' }).click();
- /*  await page.goto('https://mesabosques.bits.bo/auth/confirmation/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InhpdmFqMTk3MDBAaG9zaW50b3kuY29tIiwiaWQiOjE2LCJ1c2VyIjoiUHJ1ZWJhc191bm8iLCJpYXQiOjE3NTI3NjEwMzYsImV4cCI6MTc1Mjg0NzQzNn0.4E2GEIiGhu7Q2lGMTwJzVoVmeITuaPD0RpXFyQkL7yk');
+  await page.goto('https://mesabosques.bits.bo/auth/confirmation/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InhpdmFqMTk3MDBAaG9zaW50b3kuY29tIiwiaWQiOjE2LCJ1c2VyIjoiUHJ1ZWJhc191bm8iLCJpYXQiOjE3NTI3NjEwMzYsImV4cCI6MTc1Mjg0NzQzNn0.4E2GEIiGhu7Q2lGMTwJzVoVmeITuaPD0RpXFyQkL7yk');
   await page.getByRole('textbox', { name: 'Contraseña', exact: true }).click();
   await page.getByRole('textbox', { name: 'Contraseña', exact: true }).fill('sample');
   await page.getByText('* El campo debe tener más de').click();
@@ -56,5 +56,5 @@ test('Nuevo_usuario', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Repetir Contraseña' }).fill('123456789Lp$');
   await page.getByRole('button', { name: 'Confirmar' }).click();
   await page.locator('div').filter({ hasText: 'Correcto Cuenta confirmada' }).nth(2).click();
-  await page.locator('div').filter({ hasText: 'Correcto Cuenta confirmada' }).nth(2).click(); */
+  await page.locator('div').filter({ hasText: 'Correcto Cuenta confirmada' }).nth(2).click(); 
 });
