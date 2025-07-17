@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Caso: Verificacion de roles repetidos al crear un nuevo rol', async ({ page }) => {
   await page.goto('https://mesabosques.bits.bo/auth/login');
   await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
   await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
