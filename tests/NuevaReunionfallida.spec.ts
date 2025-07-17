@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('NuevaReunion_PruebaFallida', async ({ page }) => {
+  await page.goto('https://mesabosques.bits.bo/auth/login');
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
+  await page.getByRole('textbox', { name: 'Contraseña' }).click();
+  await page.getByRole('textbox', { name: 'Contraseña' }).fill('sample');
+  await page.getByRole('button', { name: 'Acceder' }).click();
+  //await page.goto('https://mesabosques.bits.bo/home');
+  await page.locator('a').filter({ hasText: 'Miembros y Comite' }).click();
+  await page.getByRole('link', { name: ' Grupos de Trabajo' }).click();
+  await page.getByRole('button', { name: '' }).nth(2).click();
+  await page.getByRole('button', { name: ' Crear Reunion' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).fill('Reunion Pruebatres');
+  await page.locator('#fechaReunion').click();
+  //await page.getByText('24').click();
+  await page.getByRole('gridcell', { name: '24' }).click();
+  //await page.locator('#fechaSegundaReunion').click();
+  //await page.getByRole('gridcell', { name: '30' }).click();
+  await page.getByRole('dialog', { name: 'Crear Reunión' }).getByLabel('dropdown trigger').click();
+  await page.getByText('Virtual').click();
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.getByRole('button', { name: ' Crear Reunion' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).fill('Reunion Prueba cuatro');
+  await page.locator('#fechaReunion').click();
+  await page.getByText('21').click();
+  await page.locator('#fechaSegundaReunion').click();
+  await page.getByText('30').nth(1).click();
+  await page.getByRole('dialog', { name: 'Crear Reunión' }).getByLabel('dropdown trigger').click();
+  await page.getByText('Presencial').click();
+  await page.getByRole('textbox', { name: 'Dirección' }).click();
+  await page.getByRole('textbox', { name: 'Dirección' }).fill('calle');
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.locator('a').filter({ hasText: 'Log Out' }).click();
+});
