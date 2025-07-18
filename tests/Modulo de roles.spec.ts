@@ -10,6 +10,6 @@ test('Caso: Verificacion de roles repetidos al crear un nuevo rol', async ({ pag
   await page.locator('a').filter({ hasText: 'Administración de Usuarios' }).click();
   await page.getByRole('link', { name: ' Administración de Roles' }).click();
   await page.getByRole('button', { name: ' Agregar Rol' }).click();
-  await page.getByRole('textbox', { name: 'Nombre' }).fill('Pasante');
+  await page.getByRole('textbox', { name: 'Nombre' }).fill('Programador');
   await page.getByText('* Ya existe un registro con').click();
 });
