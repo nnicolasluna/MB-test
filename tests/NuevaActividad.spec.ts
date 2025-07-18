@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('NuevaActividad', async ({ page }) => {
+  await page.goto('https://mesabosques.bits.bo/auth/login');
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
+  await page.getByRole('textbox', { name: 'Contraseña' }).click();
+  await page.getByRole('textbox', { name: 'Contraseña' }).fill('sample');
+  await page.getByRole('button', { name: 'Acceder' }).click();
+  await page.locator('a').filter({ hasText: 'Reuniones y Convocatorias' }).click();
+  await page.getByRole('link', { name: ' Administración de Agenda' }).click();
+  await page.getByRole('row', { name: 'Grupo Prueba 3 editado ' }).getByRole('button').click();
+  await page.getByRole('button', { name: ' Crear Actividad' }).click();
+  await page.getByRole('textbox', { name: 'Actividad:' }).click();
+  await page.getByRole('textbox', { name: 'Actividad:' }).fill('segundaactividad');
+  await page.getByRole('combobox', { name: 'Seleccione tipo de Actividad' }).click();
+  await page.getByRole('option', { name: 'Extraordinaria' }).click();
+  await page.getByRole('button', { name: ' Agregar Tarea' }).click();
+  await page.getByRole('textbox', { name: 'Tarea' }).click();
+  await page.getByRole('textbox', { name: 'Tarea' }).fill('prueba');
+  await page.getByRole('combobox', { name: 'Seleccionar Fecha' }).click();
+  await page.getByText('2', { exact: true }).first().click();
+  await page.getByRole('textbox', { name: 'Resultado Esperado' }).click();
+  await page.getByRole('textbox', { name: 'Resultado Esperado' }).fill('ingreso');
+  await page.getByRole('combobox', { name: 'Seleccione respondable' }).click();
+  await page.getByRole('option', { name: 'Rodrigo Emilio' }).getByRole('img').click();
+  await page.getByRole('button', { name: ' Agregar Tarea' }).click();
+  await page.getByRole('textbox', { name: 'Ingrese Tarea' }).click();
+  await page.getByRole('textbox', { name: 'Ingrese Tarea' }).fill('segundaprueba');
+  await page.locator('div').filter({ hasText: /^Fechas:\* Campo es requerido$/ }).getByRole('combobox').click();
+  await page.getByText('3', { exact: true }).click();
+  await page.getByRole('textbox', { name: 'Ingrese resultado' }).click();
+  await page.getByRole('textbox', { name: 'Ingrese resultado' }).fill('ingreso');
+  await page.getByRole('combobox', { name: 'Seleccione respondable' }).click();
+  await page.getByRole('option', { name: 'Pruebatres' }).getByRole('img').click();
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.locator('a').filter({ hasText: 'Log Out' }).click();
+});

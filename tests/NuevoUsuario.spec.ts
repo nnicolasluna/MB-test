@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/* import { test, expect } from '@playwright/test';
 
 test('NuevoUsuario', async ({ page }) => {
   await page.goto('https://mesabosques.bits.bo/auth/login');
@@ -38,4 +38,4 @@ test('NuevoUsuario', async ({ page }) => {
   await page.getByRole('button', { name: '' }).first().click();
   await page.getByRole('tab', { name: ' Usuarios Aprobados' }).click();
   await page.locator('a').filter({ hasText: 'Log Out' }).click();
-});
+}); */

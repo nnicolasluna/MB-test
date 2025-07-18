@@ -1,0 +1,35 @@
+import { test, expect } from '@playwright/test';
+
+test('ActividadEditada', async ({ page }) => {
+  await page.goto('https://mesabosques.bits.bo/auth/login');
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
+  await page.getByRole('textbox', { name: 'Contraseña' }).click();
+  await page.getByRole('textbox', { name: 'Contraseña' }).fill('sample');
+  await page.getByRole('button', { name: 'Acceder' }).click();
+  await page.locator('a').filter({ hasText: 'Reuniones y Convocatorias' }).click();
+  await page.getByRole('link', { name: ' Administración de Agenda' }).click();
+  await page.getByRole('row', { name: 'Grupo Prueba 3 editado ' }).getByRole('button').click();
+  await page.getByRole('button', { name: '' }).first().click();
+  await page.getByRole('textbox', { name: 'Actividad:' }).click();
+  await page.getByRole('textbox', { name: 'Actividad:' }).fill('actividadeditada');
+  await page.getByRole('textbox', { name: 'Tarea Tarea' }).click();
+  await page.getByRole('textbox', { name: 'Tarea Tarea' }).fill('pruebaeditada2');
+  await page.getByRole('textbox', { name: 'Resultado Esperado Resultado' }).click();
+  await page.getByRole('textbox', { name: 'Resultado Esperado Resultado' }).fill('ingresoeditada2');
+  await page.getByRole('textbox', { name: 'Ingrese Tarea' }).click();
+  await page.getByRole('textbox', { name: 'Ingrese Tarea' }).fill('segundapruebaeditada2');
+  await page.getByRole('textbox', { name: 'Ingrese resultado' }).click();
+  await page.getByRole('textbox', { name: 'Ingrese resultado' }).fill('ingresoeditada2');
+  await page.getByRole('button', { name: ' Agregar Tarea' }).click();
+  await page.locator('app-input-text').filter({ hasText: 'Tarea* Campo es requerido' }).getByPlaceholder('Ingrese Tarea').click();
+  await page.locator('app-input-text').filter({ hasText: 'Tarea* Campo es requerido' }).getByPlaceholder('Ingrese Tarea').fill('editacion');
+  await page.locator('div').filter({ hasText: /^Fechas:\* Campo es requerido$/ }).getByRole('combobox').click();
+  await page.getByText('9', { exact: true }).click();
+  await page.locator('app-input-text').filter({ hasText: 'Resultado Esperado* Campo es' }).getByPlaceholder('Ingrese resultado').click();
+  await page.locator('app-input-text').filter({ hasText: 'Resultado Esperado* Campo es' }).getByPlaceholder('Ingrese resultado').fill('editadion');
+  await page.getByRole('combobox', { name: 'Seleccione respondable' }).click();
+  await page.getByLabel('Option List').getByText('Pruebatres').click();
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.locator('a').filter({ hasText: 'Log Out' }).click();
+});
