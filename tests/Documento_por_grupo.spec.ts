@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('Documentos_por_grupo', async ({ page }) => {
+  await page.goto('https://mesabosques.bits.bo/auth/login');
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
+  await page.getByRole('textbox', { name: 'Contraseña' }).click();
+  await page.getByRole('textbox', { name: 'Contraseña' }).fill('sample');
+  await page.getByRole('button', { name: 'Acceder' }).click();
+  await page.locator('a').filter({ hasText: 'Repositorio de Información y' }).click();
+  await page.getByRole('link', { name: ' Documentos por Grupo de' }).click();
+  await page.locator('.p-ripple.p-button.p-component.p-button-icon-only').first().click();
+  await page.getByRole('button', { name: ' Agregar' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).fill('pruebas2');
+  await page.getByRole('textbox', { name: 'Descripcion:' }).click();
+  await page.getByRole('textbox', { name: 'Descripcion:' }).fill('documento de pruebas 1');
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.getByRole('button', { name: ' Agregar' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).fill('pruebas 3');
+  await page.getByRole('textbox', { name: 'Descripcion:' }).click();
+  await page.getByRole('textbox', { name: 'Descripcion:' }).fill('documento de pruebas dos');
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.getByRole('button', { name: ' Agregar' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).click();
+  await page.getByRole('textbox', { name: 'Nombre:' }).fill('pruebas 4');
+  await page.getByRole('textbox', { name: 'Descripcion:' }).click();
+  await page.getByRole('textbox', { name: 'Descripcion:' }).fill('documento de pruebas tres');
+  await page.getByRole('button', { name: ' Guardar' }).click();
+  await page.locator('a').filter({ hasText: 'Log Out' }).click();
+});
