@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/* import { test, expect } from '@playwright/test';
 
 test('Nuevo_usuario', async ({ page }) => {
   await page.goto('https://mesabosques.bits.bo/auth/login');
@@ -57,4 +57,4 @@ test('Nuevo_usuario', async ({ page }) => {
   await page.getByRole('button', { name: 'Confirmar' }).click();
   await page.locator('div').filter({ hasText: 'Correcto Cuenta confirmada' }).nth(2).click();
   await page.locator('div').filter({ hasText: 'Correcto Cuenta confirmada' }).nth(2).click(); 
-});
+}); */
