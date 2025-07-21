@@ -1,0 +1,35 @@
+import { test, expect } from '@playwright/test';
+
+test('PruebaNombredeUsuario', async ({ page }) => {
+  await page.goto('https://mesabosques.bits.bo/auth/login');
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
+  await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
+  await page.getByRole('textbox', { name: 'Contraseña' }).click();
+  await page.getByRole('textbox', { name: 'Contraseña' }).fill('sample');
+  await page.getByRole('button', { name: 'Acceder' }).click();
+  await page.locator('a').filter({ hasText: 'Administración de Usuarios' }).click();
+  await page.getByRole('link', { name: ' Configuración de Usuarios' }).click();
+  await page.getByRole('button', { name: ' Agregar Usuario' }).click();
+  //await page.getByRole('button', { name: ' Agregar Usuario' }).click();
+  await page.getByRole('textbox', { name: 'Nombres' }).fill('correo');
+  await page.getByRole('textbox', { name: 'Nombres' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Apellido Paterno' }).fill('correo');
+  await page.getByRole('textbox', { name: 'Apellido Paterno' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Apellido Materno' }).fill('correo');
+  await page.getByRole('textbox', { name: 'Apellido Materno' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Dirección' }).fill('calles correo');
+  await page.getByRole('textbox', { name: 'Dirección' }).press('Tab');
+  await page.getByRole('textbox', { name: 'CI', exact: true }).fill('51651');
+  await page.getByRole('textbox', { name: 'CI', exact: true }).press('Tab');
+  await page.getByRole('textbox', { name: 'Correo Electrónico' }).fill('pruebas@pruebas.com');
+  await page.getByRole('textbox', { name: 'Correo Electrónico' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Teléfono' }).fill('65165');
+  await page.getByRole('textbox', { name: 'Teléfono' }).press('Tab');
+  await page.locator('p-button').filter({ hasText: 'Adjuntar Imagen' }).press('Tab');
+  await page.getByRole('button', { name: 'true Adjuntar Imagen' }).press('Tab');
+  await page.getByRole('combobox', { name: 'Seleccione un rol' }).click();
+  await page.getByRole('option', { name: 'Documentador' }).click();
+  await page.getByRole('textbox', { name: 'Nombre de Usuario' }).click();
+  await page.getByRole('textbox', { name: 'Nombre de Usuario' }).fill('pruebasabado');
+  await page.getByText('* Ya existe un registro con').click();
+});

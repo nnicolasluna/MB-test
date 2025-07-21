@@ -1,6 +1,6 @@
-/* import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
-test('NuevoUsuario', async ({ page }) => {
+await page.goto('https://mesabosques.bits.bo/auth/login');test('NuevoUsuario', async ({ page }) => {
   await page.goto('https://mesabosques.bits.bo/auth/login');
   await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
   await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');
@@ -11,26 +11,26 @@ test('NuevoUsuario', async ({ page }) => {
   await page.getByRole('link', { name: ' Configuración de Usuarios' }).click();
   await page.getByRole('button', { name: ' Agregar Usuario' }).click();
   //await page.getByRole('button', { name: ' Agregar Usuario' }).click();
-  await page.getByRole('textbox', { name: 'Nombres' }).fill('Pruebacuatro');
+  await page.getByRole('textbox', { name: 'Nombres' }).fill('PruebaSabado');
   await page.getByRole('textbox', { name: 'Apellido Paterno' }).click();
-  await page.getByRole('textbox', { name: 'Apellido Paterno' }).fill('Pruebacuatro');
+  await page.getByRole('textbox', { name: 'Apellido Paterno' }).fill('PruebaSabado');
   await page.getByRole('textbox', { name: 'Apellido Materno' }).click();
-  await page.getByRole('textbox', { name: 'Apellido Materno' }).fill('Pruebacuatro');
+  await page.getByRole('textbox', { name: 'Apellido Materno' }).fill('PruebaSabado');
   await page.getByRole('textbox', { name: 'Dirección' }).click();
-  await page.getByRole('textbox', { name: 'Dirección' }).fill('calle Pruebacuatro');
+  await page.getByRole('textbox', { name: 'Dirección' }).fill('calle PruebaSabado');
   await page.getByRole('textbox', { name: 'CI', exact: true }).click();
-  await page.getByRole('textbox', { name: 'CI', exact: true }).fill('9849498400');
+  await page.getByRole('textbox', { name: 'CI', exact: true }).fill('56516560000');
   await page.getByRole('textbox', { name: 'Correo Electrónico' }).click();
   await page.getByRole('textbox', { name: 'Correo Electrónico' }).click();
   //await page.getByRole('textbox', { name: 'Correo Electrónico' }).fill('xivaj19700@hosintoy.com');
   //await page.getByRole('textbox', { name: 'Correo Electrónico' }).click();
-  await page.getByRole('textbox', { name: 'Correo Electrónico' }).fill('kasek53752@hosintoy.com');
+  await page.getByRole('textbox', { name: 'Correo Electrónico' }).fill('rilece4815@forexru.com')
   await page.getByRole('textbox', { name: 'Teléfono' }).click();
-  await page.getByRole('textbox', { name: 'Teléfono' }).fill('654544');
+  await page.getByRole('textbox', { name: 'Teléfono' }).fill('51118451');
   await page.getByRole('dialog', { name: 'Agregar Usuario' }).getByLabel('dropdown trigger').click();
   await page.getByLabel('Documentador').getByText('Documentador').click();
   await page.getByRole('textbox', { name: 'Nombre de Usuario' }).click();
-  await page.getByRole('textbox', { name: 'Nombre de Usuario' }).fill('pruebacuatro');
+  await page.getByRole('textbox', { name: 'Nombre de Usuario' }).fill('pruebasabado');
   await page.getByRole('combobox', { name: 'Usuario válido hasta' }).click();
   await page.getByText('30').nth(1).click();
   await page.getByRole('button', { name: ' Guardar' }).click();
@@ -38,4 +38,4 @@ test('NuevoUsuario', async ({ page }) => {
   await page.getByRole('button', { name: '' }).first().click();
   await page.getByRole('tab', { name: ' Usuarios Aprobados' }).click();
   await page.locator('a').filter({ hasText: 'Log Out' }).click();
-}); */
+}); 
