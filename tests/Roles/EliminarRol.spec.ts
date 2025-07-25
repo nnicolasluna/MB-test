@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('EliminarRol', async ({ page }) => {
+test('Caso: Eliminacion de Rol', async ({ page }) => {
   await page.goto('https://mesabosques.bits.bo/auth/login');
   await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).click();
   await page.getByRole('textbox', { name: 'Nombre Usuario / Correo' }).fill('admin');

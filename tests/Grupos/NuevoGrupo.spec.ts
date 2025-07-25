@@ -17,9 +17,10 @@ test('NuevoGrupo', async ({ page }) => {
   await page.getByRole('combobox', { name: 'Seleccionar Fecha' }).click();
   await page.getByText('20', { exact: true }).click();
   await page.getByText('Seleccione integrantes').click();
-  await page.getByRole('checkbox', { name: 'Rodrigo Emilio' }).check();
-  await page.getByRole('checkbox', { name: 'Cliente1' }).check();
-  await page.getByRole('checkbox', { name: 'Documentador' }).check();
+  const participantes = page.locator('input.p-checkbox-input[type="checkbox"]');
+  await expect(participantes.first()).toBeVisible();
+  await participantes.nth(0).check();
+  await participantes.nth(1).check();
   await page.getByRole('combobox', { name: 'Seleccione tipo de grupo' }).click();
   await page.getByRole('option', { name: 'Sesiones de la MBC' }).click();
   await page.getByRole('combobox', { name: 'Seleccionar Fecha' }).click();

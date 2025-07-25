@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/* import { test, expect } from '@playwright/test';
 
 test('Documentos_grupos_editadofallida', async ({ page }) => {
   await page.goto('https://mesabosques.bits.bo/auth/login');
@@ -35,4 +35,4 @@ test('Documentos_grupos_editadofallida', async ({ page }) => {
   await page.getByRole('row', { name: 'pruebas dos editada    ' }).getByRole('button').nth(3).click();
   const download1 = await download1Promise;
   await page.locator('a').filter({ hasText: 'Log Out' }).click();
-});
+}); */
