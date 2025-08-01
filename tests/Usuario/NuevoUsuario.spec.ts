@@ -10,7 +10,7 @@ test('NuevoUsuario', async ({ page }) => {
   await page.locator('a').filter({ hasText: 'Administración de Usuarios' }).click();
   await page.getByRole('link', { name: ' Configuración de Usuarios' }).click();
   await page.getByRole('button', { name: ' Agregar Usuario' }).click();
-  const timestamp = Date.now(); 
+  const timestamp = Date.now();
   const randomUsername = `testuser_${timestamp}`;
   const randomCI = `testci_${timestamp}`;
   const randomEmail = `test_${timestamp}@example.com`;
@@ -29,7 +29,7 @@ test('NuevoUsuario', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Teléfono' }).click();
   await page.getByRole('textbox', { name: 'Teléfono' }).fill('51118451');
   await page.getByRole('dialog', { name: 'Agregar Usuario' }).getByLabel('dropdown trigger').click();
-  await page.getByLabel('Documentador').getByText('Documentador').click();
+  await page.getByLabel('Administrador').getByText('Administrador').click();
   await page.getByRole('textbox', { name: 'Nombre de Usuario' }).click();
   await page.getByRole('textbox', { name: 'Nombre de Usuario' }).fill(randomUsername);
   await page.getByRole('combobox', { name: 'Usuario válido hasta' }).click();
